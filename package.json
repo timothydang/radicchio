@@ -7,19 +7,28 @@
   "author": "Author Name <email@email.com> (http://email.com/)",
   "devDependencies": {
     "gulp": "~3.8.6",
+
+    "gulp-autoprefixer": "*",
     "gulp-coffee": "*",
     "gulp-sass": "*",
-    "gulp-autoprefixer": "*",
     "gulp-uglify": "*",
     "gulp-jshint": "*",
+
     "gulp-minify-css": "*",
+    "gulp.spritesmith": "*",
+
     "gulp-header": "*",
     "gulp-rename": "*",
+    "gulp-util": "",
     "gulp-notify": "*",
     "gulp-watch": "*",
-    "gulp.spritesmith": "*",
+
+    "express": "*",
+    "connect-livereload": "*",
+    "tiny-lr": "*",
+
     "gulp-jsdoc": "*",
-    "gulp-sassdoc": "*",
+    "gulp-sassdoc": "*"
   },
   "tags": [
   ],
