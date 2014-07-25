@@ -1,0 +1,35 @@
+{
+  "name": "project-name",
+  "description": "Development",
+  "version": "0.1.0",
+  "homepage": "http://sitename.com",
+  "repository": "",
+  "author": "Author Name <email@email.com> (http://email.com/)",
+  "devDependencies": {
+    "gulp": "~3.8.6",
+    "gulp-coffee": "*",
+    "gulp-sass": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-uglify": "*",
+    "gulp-jshint": "*",
+    "gulp-minify-css": "*",
+    "gulp-header": "*",
+    "gulp-rename": "*",
+    "gulp-notify": "*",
+    "gulp-watch": "*",
+    "gulp.spritesmith": "*",
+    "gulp-jsdoc": "*",
+    "gulp-sassdoc": "*",
+  },
+  "tags": [
+  ],
+  "files": [
+  ],
+  "dependencies": {
+  },
+  "scripts": {
+  },
+  "licenses": [
+  ],
+  "engineStrict": true
+}

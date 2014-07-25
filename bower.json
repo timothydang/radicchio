@@ -1,0 +1,7 @@
+{
+  "name": "style",
+  "dependencies": {
+    "normalize-css": "~3.0.1",
+    "metaquery": "~1.2.3"
+  }
+}
