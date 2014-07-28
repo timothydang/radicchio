@@ -1,0 +1,45 @@
+﻿/* glue: 0.9.4 hash: 4ab7629eeb */
+        .sprite-common-menu-qff,
+.sprite-common-menu-search,
+.sprite-common-menu-home,
+.sprite-common-menu {
+            background-image: url('../../images/sprites/common.png');
+            background-repeat: no-repeat;
+        }
+        
+        .sprite-common-menu-qff {
+            background-position: 0 0;
+            width: 19px;
+            height: 16px;
+        }
+        
+        .sprite-common-menu-search {
+            background-position: 0 -16px;
+            width: 17px;
+            height: 17px;
+        }
+        
+        .sprite-common-menu-home {
+            background-position: -19px 0;
+            width: 17px;
+            height: 15px;
+        }
+        
+        .sprite-common-menu {
+            background-position: -19px -15px;
+            width: 16px;
+            height: 16px;
+        }
+        
+        @media screen and (-webkit-min-device-pixel-ratio: 1.0), screen and (min--moz-device-pixel-ratio: 1.0), screen and (-o-min-device-pixel-ratio: 100/100), screen and (min-device-pixel-ratio: 1.0), screen and (min-resolution: 1.0dppx) {
+            .sprite-common-menu-qff,
+    .sprite-common-menu-search,
+    .sprite-common-menu-home,
+    .sprite-common-menu {
+                background-image: url('../../images/sprites/common.png');
+                -webkit-background-size: 36px 33px;
+                -moz-background-size: 36px 33px;
+                background-size: 36px 33px;
+            }
+        }
+        

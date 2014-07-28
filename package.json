@@ -6,39 +6,30 @@
   "repository": "",
   "author": "Author Name <email@email.com> (http://email.com/)",
   "devDependencies": {
+    "connect-livereload": "*",
+    "express": "*",
     "gulp": "~3.8.6",
-
     "gulp-autoprefixer": "*",
     "gulp-coffee": "*",
-    "gulp-sass": "*",
-    "gulp-uglify": "*",
-    "gulp-jshint": "*",
-
-    "gulp-minify-css": "*",
-    "gulp.spritesmith": "*",
-
     "gulp-header": "*",
-    "gulp-rename": "*",
-    "gulp-util": "",
-    "gulp-notify": "*",
-    "gulp-watch": "*",
-
-    "express": "*",
-    "connect-livereload": "*",
-    "tiny-lr": "*",
-
+    "gulp-if": "*",
     "gulp-jsdoc": "*",
-    "gulp-sassdoc": "*"
+    "gulp-jshint": "*",
+    "gulp-minify-css": "*",
+    "gulp-notify": "*",
+    "gulp-rename": "*",
+    "gulp-sass": "*",
+    "gulp-sassdoc": "*",
+    "gulp-sprite-glue": "0.0.1",
+    "gulp-uglify": "*",
+    "gulp-util": "",
+    "gulp-watch": "*",
+    "tiny-lr": "*"
   },
-  "tags": [
-  ],
-  "files": [
-  ],
-  "dependencies": {
-  },
-  "scripts": {
-  },
-  "licenses": [
-  ],
+  "tags": [],
+  "files": [],
+  "dependencies": {},
+  "scripts": {},
+  "licenses": [],
   "engineStrict": true
 }

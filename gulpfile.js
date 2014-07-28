@@ -1,11 +1,15 @@
-var gulp = require('gulp'),
-    sass = require('gulp-sass'),
+var gulp         = require('gulp'),
+    sass         = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
-    uglify = require('gulp-uglify'),
-    jshint = require('gulp-jshint'),
-    header  = require('gulp-header'),
-    rename = require('gulp-rename'),
-    minifyCSS = require('gulp-minify-css'),
+    uglify       = require('gulp-uglify'),
+    jshint       = require('gulp-jshint'),
+    header       = require('gulp-header'),
+    rename       = require('gulp-rename'),
+    minifyCSS    = require('gulp-minify-css'),
+    gulpif       = require("gulp-if"),
+    gutil        = require('gulp-util'),
+    debug        = require('gulp-debug'),
+    glue         = require('gulp-sprite-glue'),
     package = require('./package.json');
 
 
@@ -16,13 +20,17 @@ var express_port      = 1987;
 var express_root      = __dirname + '/app/';
 var livereload_port   = 35729;
 var destinations = {
-  html:       "",
-  js:         "",
-  css:        ""
+  html:         "app",
+  js:           "app/assets/js",
+  css:          "app/assets/css",
+  css_sprites:  "app/assets/css/sprites",
+  images:       "app/assets/images",
+  sprites:      "app/assets/images/sprites"
 }
 var source_files = {
-  coffee:     "coffee/**/*.coffee",
-  sass:       "css/**/*.sass"
+  sprites:    "app/assets/images/sprites",
+  coffee:     "app/assets/coffee/**/*.coffee",
+  sass:       "app/assets/css/**/*.sass",
   overwatch:  "app/**/*.{js,html,css}"
 }
 //// SETTINGS
@@ -63,11 +71,11 @@ gulp.task("sass", function() {
 gulp.task('coffee', function() {
   gulp.src(source_files.coffee)
     .pipe(coffee())
-    .pipe(gulp.dest(destinations.js)
+    .pipe(gulp.dest(destinations.js))
     .pipe(uglify())
     .pipe(header(banner, { package : package }))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest(destinations.js)
+    .pipe(gulp.dest(destinations.js))
 });
 
 gulp.task("watch", function() {
@@ -76,7 +84,27 @@ gulp.task("watch", function() {
   gulp.watch(source_files.overwatch, refresh);
 });
 
-gulp.task('default', ['clean', 'serve', 'fonts', 'sprite', 'css', 'js', 'static', 'watch']);
+gulp.task("sprites", function() {
+  var spriteData = gulp.src(source_files.sprites)
+    .pipe(glue(".", {
+      img: destinations.sprites,
+      css: destinations.css_sprites,
+      project: true,
+      namespace: 'sprite',
+      recursive: false,
+    }));
+});
+
+// gulp.task('default', ['clean', 'serve', 'fonts', 'sprites', 'css', 'js', 'static', 'watch']);
+
+logFile = function(es) {
+  console.log("logFile");
+  console.log(es);
+  return es.map(function(file, cb) {
+    gutil.log(file.path);
+    return cb();
+  });
+};
 
 refresh = function(event) {
   var fileName = require('path').relative(express_root, event.path);
