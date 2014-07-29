@@ -17,6 +17,7 @@
     "gulp-jshint": "*",
     "gulp-minify-css": "*",
     "gulp-notify": "*",
+    "gulp-clean": "*",
     "gulp-rename": "*",
     "gulp-sass": "*",
     "gulp-sassdoc": "*",

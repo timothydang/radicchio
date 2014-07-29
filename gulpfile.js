@@ -10,12 +10,14 @@ var gulp         = require('gulp'),
     gutil        = require('gulp-util'),
     debug        = require('gulp-debug'),
     glue         = require('gulp-sprite-glue'),
+    clean        = require('gulp-clean'),
     package = require('./package.json');
 
 
 
 //// SETTINGS
 var ASSET_PATH = "app/assets"
+var BUILD_PATH = "public"
 var express_port      = 1987;
 var express_root      = __dirname + '/app/';
 var livereload_port   = 35729;
@@ -93,6 +95,11 @@ gulp.task("sprites", function() {
       namespace: 'sprite',
       recursive: false,
     }));
+});
+
+gulp.task('clean', function(){
+  return gulp.src(BUILD_PATH + '/**/*' , {read: false})
+    .pipe(clean());
 });
 
 // gulp.task('default', ['clean', 'serve', 'fonts', 'sprites', 'css', 'js', 'static', 'watch']);
