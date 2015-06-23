@@ -14,7 +14,6 @@ var gulp         = require('gulp'),
     package = require('./package.json');
 
 
-
 //// SETTINGS
 var ASSET_PATH = "app/assets"
 var BUILD_PATH = "public"

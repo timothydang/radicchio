@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <!--
+    Thanks NASA. http://www.jpl.nasa.gov/spaceimages/details.php?id=PIA12765
+  -->
+  <head>
+    <meta name="breakpoint" content="phone" media="(max-width: 480px)">
+    <meta name="breakpoint" content="small-tablet" media="(min-width: 480px) and (max-width: 600px)">
+    <meta name="breakpoint" content="tablet" media="(min-width: 600px) and (max-width: 1024px)">
+    <meta name="breakpoint" content="widescreen" media="(min-width: 1024px)">
+    
+    <script src="./vendor/modernizr.js"></script>
+    
+    <style>
+      body { background-size: cover; margin: 0; padding: 0; }
+    
+      .breakpoint-phone body { background-image: url('./moon-phone.jpg'); }
+      .breakpoint-small-tablet body { background-image: url('./moon-small-tablet.jpg'); }
+      .breakpoint-tablet body { background-image: url('./moon-tablet.jpg'); }
+      .breakpoint-widescreen body { background-image: url('./moon-widescreen.jpg'); }
+    </style>
+  </head>
+  <body>
+    <script>
+      Modernizr.load([
+        {
+          test: (!!window.matchMedia),
+          nope: ['./vendor/matchMedia-oldie.js']
+        },
+        {
+          load: './metaquery.js'
+        }
+      ]);
+    </script>
+  </body>
+</html>
